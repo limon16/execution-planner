@@ -116,18 +116,29 @@ const depsById = computed(() => {
             class="rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 p-3 flex flex-col gap-2 shrink-0"
           >
             <header class="flex items-center justify-between">
-              <h2 class="text-sm font-semibold text-slate-600 dark:text-slate-300">
-                Execution Waves
-              </h2>
+              <div class="flex items-baseline gap-2">
+                <h2 class="text-sm font-semibold text-slate-600 dark:text-slate-300">
+                  Execution Waves
+                </h2>
+                <span class="text-xs text-slate-400 dark:text-slate-500 italic">
+                  (animated with 1s delay per wave for visibility)
+                </span>
+              </div>
               <span v-if="plan" class="text-xs text-slate-500 dark:text-slate-400">
                 {{ plan.waves.length }} {{ plan.waves.length === 1 ? 'wave' : 'waves' }}
               </span>
             </header>
 
-            <PlaybackControls
+            <Button
               v-if="plan && plan.waves.length"
-              :status="playback.status.value"
-              @replay="playback.replay"
+              label="Replay"
+              icon="pi pi-replay"
+              size="small"
+              severity="secondary"
+              outlined
+              :disabled="playback.status.value === 'playing'"
+              class="self-start"
+              @click="playback.replay"
             />
 
             <div v-if="!plan" class="text-sm text-slate-500 dark:text-slate-400 py-2">
