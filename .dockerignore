@@ -1,0 +1,11 @@
+node_modules
+dist
+coverage
+.git
+.gitignore
+.idea
+.vscode
+.DS_Store
+*.log
+README.md
+.claude
