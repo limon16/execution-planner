@@ -7,7 +7,6 @@ import WaveColumn from './WaveColumn.vue'
 import WarningsList from './WarningsList.vue'
 import StatsPanel from './StatsPanel.vue'
 import SkippedList from './SkippedList.vue'
-import PlaybackControls from './PlaybackControls.vue'
 import { usePlanner } from '@/composables/usePlanner'
 import { useWavePlayback } from '@/composables/useWavePlayback'
 
