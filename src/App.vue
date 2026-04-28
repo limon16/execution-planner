@@ -1,4 +1,4 @@
-ч<script setup lang="ts">
+<script setup lang="ts">
 import ExecutionPlanner from './components/ExecutionPlanner.vue'
 </script>
 
